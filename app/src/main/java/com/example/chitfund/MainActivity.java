@@ -25,6 +25,32 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+    public void listMembers(View v){
+        Intent i = new Intent(this,ListMembers.class);
+        startActivity(i);
+        finish();
+    }
+
+    public void payment (View v){
+        Intent i = new Intent(this,Payment.class);
+        startActivity(i);
+        finish();
+    }
+    public void report(View v){
+        Intent i = new Intent(this,LedgerReport.class);
+        startActivity(i);
+        finish();
+    }
+    public void luckyDraw(View v){
+        Intent i = new Intent(this,LuckyDraw.class);
+        startActivity(i);
+        finish();
+    }
+    public void settings(View v){
+        Intent i = new Intent(this,Settings.class);
+        startActivity(i);
+        finish();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

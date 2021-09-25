@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:onClick="luckyDraw"
             app:cardCornerRadius="2dp"
             app:contentPadding="10dp">
 
@@ -57,6 +58,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/cardView5"
+            android:onClick="settings"
             app:cardCornerRadius="2dp"
             app:contentPadding="10dp">
 
@@ -94,7 +96,7 @@
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toobar"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="39dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -146,6 +148,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/cardView"
+            android:onClick="listMembers"
             app:cardCornerRadius="2dp"
             app:contentPadding="10dp">
 
@@ -195,6 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
+            android:onClick="payment"
             app:cardCornerRadius="2dp"
             app:contentPadding="10dp">
 
@@ -232,6 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="5dp"
+            android:onClick="report"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/cardView3"
             app:cardCornerRadius="2dp"
