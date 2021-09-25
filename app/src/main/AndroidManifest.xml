@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChitFund">
         <activity
+            android:name=".Settings"
+            android:exported="true" />
+        <activity
+            android:name=".LuckyDraw"
+            android:exported="true" />
+        <activity
+            android:name=".LedgerReport"
+            android:exported="true" />
+        <activity
+            android:name=".Payment"
+            android:exported="true" />
+        <activity
+            android:name=".ListMembers"
+            android:exported="true" />
+        <activity
             android:name=".AddMember"
             android:exported="true" />
         <activity
@@ -23,7 +38,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

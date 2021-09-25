@@ -94,8 +94,8 @@
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="44dp"
+        android:layout_below="@+id/toobar"
+        android:layout_marginTop="39dp"
         android:gravity="center"
         android:orientation="horizontal">
 
