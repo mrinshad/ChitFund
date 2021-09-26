@@ -52,6 +52,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_MEMBER_CHITVALUE + " TEXT"
             + ")";
 
+    //    Chit value
+    private static final String TABLE_CHIT = "chit";
+
+    private static final String COLUMN_CHIT_TYPE = "chit";
+    private static final String COLUMN_CHIT_VALUE = "Value";
+
+    private String CREATE_CHIT_TABLE = "CREATE TABLE " + TABLE_CHIT + "("
+            + COLUMN_CHIT_TYPE + " TEXT,"
+            + COLUMN_CHIT_VALUE + " TEXT"
+            + ")";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -69,6 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_MEMBER_TABLE);
+        db.execSQL(CREATE_CHIT_TABLE);
     }
 
 
@@ -101,7 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addMember(String name,String place,String address,String number,String prType,String prNumber,String chitValue) {
+    public void addMember(String name, String place, String address, String number, String prType, String prNumber, String chitValue) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

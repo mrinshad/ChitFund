@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toolbar;
 
+import com.example.chitfund.SecondWindows.ChitValue;
+
 public class Settings extends AppCompatActivity {
     androidx.appcompat.widget.Toolbar  toolbar;
     @Override
@@ -31,6 +33,11 @@ public void logout(View v){
         Intent i = new Intent(this,LoginPage.class);
         startActivity(i);
         finish();
+}
+
+public void setChitValue(View V){
+    Intent i = new Intent(this, ChitValue.class);
+    startActivity(i);
 }
 
 
