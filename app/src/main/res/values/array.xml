@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    proof values-->
+    <string-array name="proof_values">
+        <item>Select an Item</item>
+        <item>Aadhar</item>
+        <item>ID Card</item>
+        <item>Ration Card</item>
+        <item>License</item>
+        <item>Other</item>
+    </string-array>
+
+    <!--    chit values-->
+    <string-array name="chit_values">
+        <item>Select an Item</item>
+        <item>Full Chit</item>
+        <item>Half Chit</item>
+        <item>Other</item>
+    </string-array>
+</resources>

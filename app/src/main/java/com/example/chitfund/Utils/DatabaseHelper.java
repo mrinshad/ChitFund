@@ -36,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String COLUMN_MEMBER_ID = "id";
     private static final String COLUMN_MEMBER_NAME = "name";
+    private static final String COLUMN_MEMBER_PLACE = "place";
     private static final String COLUMN_MEMBER_NUMBER = "contNumber";
     private static final String COLUMN_MEMBER_ADDRESS = "address";
     private static final String COLUMN_MEMBER_PROOF_TYPE = "prType";
@@ -46,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_MEMBER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_MEMBER_NAME + " TEXT,"
             + COLUMN_MEMBER_NUMBER + " TEXT," + COLUMN_MEMBER_ADDRESS + " TEXT,"
             + COLUMN_MEMBER_PROOF_TYPE + " TEXT,"
+            + COLUMN_MEMBER_PLACE + " TEXT,"
             + COLUMN_MEMBER_PROOF_NUMBER + " TEXT,"
             + COLUMN_MEMBER_CHITVALUE + " TEXT"
             + ")";
@@ -96,6 +98,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_USER, null, values);
+        db.close();
+    }
+
+    public void addMember(String name,String place,String address,String number,String prType,String prNumber,String chitValue) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_MEMBER_NAME, name);
+        values.put(COLUMN_MEMBER_PLACE, place);
+        values.put(COLUMN_MEMBER_ADDRESS, address);
+        values.put(COLUMN_MEMBER_NUMBER, number);
+        values.put(COLUMN_MEMBER_PROOF_TYPE, prType);
+        values.put(COLUMN_MEMBER_PROOF_NUMBER, prNumber);
+        values.put(COLUMN_MEMBER_CHITVALUE, chitValue);
+
+        // Inserting Row
+        db.insert(TABLE_MEMBER, null, values);
         db.close();
     }
 
