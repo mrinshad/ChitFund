@@ -23,33 +23,33 @@ public class MainActivity extends AppCompatActivity {
     public void addMembers(View v){
         Intent i = new Intent(this,AddMember.class);
         startActivity(i);
-        finish();
+//        finish();
     }
     public void listMembers(View v){
         Intent i = new Intent(this,ListMembers.class);
         startActivity(i);
-        finish();
+//        finish();
     }
 
     public void payment (View v){
         Intent i = new Intent(this,Payment.class);
         startActivity(i);
-        finish();
+//        finish();
     }
     public void report(View v){
         Intent i = new Intent(this,LedgerReport.class);
         startActivity(i);
-        finish();
+//        finish();
     }
     public void luckyDraw(View v){
         Intent i = new Intent(this,LuckyDraw.class);
         startActivity(i);
-        finish();
+//        finish();
     }
     public void settings(View v){
         Intent i = new Intent(this,Settings.class);
         startActivity(i);
-        finish();
+//        finish();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
