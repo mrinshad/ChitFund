@@ -3,21 +3,38 @@ package com.example.chitfund;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.example.chitfund.Utils.DatabaseHelper;
+import com.example.chitfund.Utils.User;
 
 public class SplashScreen extends AppCompatActivity {
     private int progressStatus = 0;
     private Handler handler = new Handler();
     private TextView textView;
 
+    SQLiteDatabase db;
+    private DatabaseHelper databaseHelper;
+    private User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         getSupportActionBar().hide();
+
+//        databaseHelper = new DatabaseHelper(SplashScreen.this);
+//        user = new User();
+//
+//        user.setName("Admin");
+//        user.setEmail("admin@123.in");
+//        user.setPassword("0");
+//
+//        databaseHelper.addUser(user);
 
         ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar); // initiate the progress bar
         simpleProgressBar.setMax(100); // 100 maximum value for the progress bar
@@ -32,7 +49,7 @@ public class SplashScreen extends AppCompatActivity {
                     handler.post(new Runnable() {
                         public void run() {
                             simpleProgressBar.setProgress(progressStatus);
-                            textView.setText(progressStatus+"%");
+                            textView.setText(progressStatus + "%");
                         }
                     });
                     try {
@@ -51,7 +68,7 @@ public class SplashScreen extends AppCompatActivity {
                     sleep(3 * 1000);
 
                     // After 5 seconds redirect to another intent
-                    Intent i = new Intent(getBaseContext(), LoginPage.class);
+                    Intent i = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
 
                     //Remove activity

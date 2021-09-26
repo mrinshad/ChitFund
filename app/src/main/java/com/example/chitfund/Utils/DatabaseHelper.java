@@ -18,19 +18,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "Chitfund.db";
 
-    // User table name
+    // User table
     private static final String TABLE_USER = "user";
 
-    // User Table Columns names
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_PASSWORD = "user_password";
 
-    // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
+
+//    Member table
+
+    private static final String TABLE_MEMBER = "member";
+
+    private static final String COLUMN_MEMBER_ID = "id";
+    private static final String COLUMN_MEMBER_NAME = "name";
+    private static final String COLUMN_MEMBER_NUMBER = "contNumber";
+    private static final String COLUMN_MEMBER_ADDRESS = "address";
+    private static final String COLUMN_MEMBER_PROOF_TYPE = "prType";
+    private static final String COLUMN_MEMBER_PROOF_NUMBER = "prNumber";
+    private static final String COLUMN_MEMBER_CHITVALUE = "chitValue";
+
+    private String CREATE_MEMBER_TABLE = "CREATE TABLE " + TABLE_MEMBER + "("
+            + COLUMN_MEMBER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_MEMBER_NAME + " TEXT,"
+            + COLUMN_MEMBER_NUMBER + " TEXT," + COLUMN_MEMBER_ADDRESS + " TEXT,"
+            + COLUMN_MEMBER_PROOF_TYPE + " TEXT,"
+            + COLUMN_MEMBER_PROOF_NUMBER + " TEXT,"
+            + COLUMN_MEMBER_CHITVALUE + " TEXT"
+            + ")";
+
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -47,6 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_MEMBER_TABLE);
     }
 
 
@@ -78,6 +98,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_USER, null, values);
         db.close();
     }
+
 
     /**
      * This method is to fetch all user and return the list of user records

@@ -9,8 +9,12 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.chitfund.Utils.DatabaseHelper;
 import com.example.chitfund.Utils.InputValidation;
@@ -124,6 +128,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
             accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
             emptyInputEditText();
             startActivity(accountsIntent);
+            finish();
 
 
         } else {
@@ -138,5 +143,36 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     private void emptyInputEditText() {
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
+    }
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+
+    @Override
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            System.out.println("Back button long pressed");
+            Intent intentRegister = new Intent(getApplicationContext(), Register.class);
+            startActivity(intentRegister);
+            return true;
+        }
+        return super.onKeyLongPress(keyCode, event);
     }
 }

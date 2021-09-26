@@ -25,4 +25,8 @@
         <item name="colorPrimaryDark">@color/Primary</item>
         <item name="colorAccent">@color/Secondary</item>
     </style>
+    <style name="MyThemeOverlay_Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!-- color used by navigation icon and overflow icon -->
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
 </resources>

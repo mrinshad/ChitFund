@@ -140,11 +140,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
             user.setPassword(textInputEditTextPassword.getText().toString().trim());
 
+
             databaseHelper.addUser(user);
 
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(nestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG).show();
             emptyInputEditText();
+            finish();
 
 
         } else {
